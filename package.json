@@ -1,0 +1,10 @@
+{
+  "name": "chesskid-style-arena",
+  "version": "1.0.0",
+  "description": "ChessKid-inspired multiplayer chess MVP",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  }
+}
