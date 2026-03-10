@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ChessKid Super Arena</title>
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <div class="brand">♟️ ChessKid Super Arena</div>
+      <nav>
+        <button class="nav active" data-tab="play">Play</button>
+        <button class="nav" data-tab="learn">Learn</button>
+        <button class="nav" data-tab="puzzles">Puzzles</button>
+        <button class="nav" data-tab="clubs">Clubs</button>
+        <button class="nav" data-tab="parents">Parent Controls</button>
+      </nav>
+      <div class="profile" id="profileCard">Not logged in</div>
+    </aside>
+
+    <main>
+      <header class="topbar">
+        <div>
+          <h1>Welcome to your ChessKid-style dashboard</h1>
+          <p>Play friends, bots, solve puzzles, and track progress.</p>
+        </div>
+        <div class="auth-row">
+          <input id="username" placeholder="Username" />
+          <input id="password" type="password" placeholder="Password" />
+          <select id="role"><option value="kid">Kid</option><option value="parent">Parent</option></select>
+          <button id="registerBtn">Register</button>
+          <button id="loginBtn">Login</button>
+          <button id="logoutBtn">Logout</button>
+        </div>
+      </header>
+
+      <section id="play" class="tab active">
+        <div class="grid two">
+          <article class="card">
+            <h2>Play Multiplayer</h2>
+            <div class="row">
+              <button id="queueBtn">Quick Match</button>
+              <button id="createPrivateBtn">Create Private Room</button>
+            </div>
+            <div class="row">
+              <input id="privateCode" placeholder="Room code" />
+              <button id="joinPrivateBtn">Join Room</button>
+            </div>
+            <div class="row">
+              <button data-bot="pawnbot" class="botBtn">Play PawnBot</button>
+              <button data-bot="knightbot" class="botBtn">Play KnightBot</button>
+              <button data-bot="queenbot" class="botBtn">Play QueenBot</button>
+            </div>
+            <p id="matchStatus">No active queue.</p>
+          </article>
+
+          <article class="card">
+            <h2>Live Match</h2>
+            <p id="gameInfo">No game selected.</p>
+            <div id="board" class="board"></div>
+            <div class="row">
+              <input id="chatInput" placeholder="Send safe chat message" />
+              <button id="sendChatBtn">Send</button>
+            </div>
+            <div id="chatBox" class="chat"></div>
+          </article>
+        </div>
+      </section>
+
+      <section id="learn" class="tab">
+        <article class="card"><h2>Lessons</h2><div id="lessonsList"></div></article>
+      </section>
+
+      <section id="puzzles" class="tab">
+        <article class="card">
+          <h2>Daily Puzzle</h2>
+          <p id="puzzlePrompt"></p>
+          <div id="puzzleBoard" class="board small"></div>
+          <div class="row">
+            <input id="puzzleFrom" placeholder="from (e.g. d5)" />
+            <input id="puzzleTo" placeholder="to (e.g. d7)" />
+            <button id="solvePuzzleBtn">Submit</button>
+          </div>
+        </article>
+      </section>
+
+      <section id="clubs" class="tab">
+        <article class="card"><h2>Clubs</h2><div id="clubsList"></div></article>
+      </section>
+
+      <section id="parents" class="tab">
+        <article class="card"><h2>Parent Controls</h2><pre id="parentControls"></pre></article>
+      </section>
+    </main>
+  </div>
+
+  <div id="toast"></div>
+  <script src="/app.js"></script>
+</body>
+</html>
